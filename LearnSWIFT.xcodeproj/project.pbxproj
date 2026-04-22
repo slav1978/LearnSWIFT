@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		156DBA462F99697F008FE852 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 156DBA452F99697F008FE852 /* Utils */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		152EBD762F9968B9003EC21C /* LearnSWIFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSWIFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156DBA462F99697F008FE852 /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = LearnSWIFT;
 			packageProductDependencies = (
+				156DBA452F99697F008FE852 /* Utils */,
 			);
 			productName = LearnSWIFT;
 			productReference = 152EBD762F9968B9003EC21C /* LearnSWIFT.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 152EBD6D2F9968B9003EC21C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				156DBA442F99697F008FE852 /* XCLocalSwiftPackageReference "../Utils" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 152EBD772F9968B9003EC21C /* Products */;
 			projectDirPath = "";
@@ -332,6 +341,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		156DBA442F99697F008FE852 /* XCLocalSwiftPackageReference "../Utils" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Utils;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		156DBA452F99697F008FE852 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 152EBD6E2F9968B9003EC21C /* Project object */;
 }
