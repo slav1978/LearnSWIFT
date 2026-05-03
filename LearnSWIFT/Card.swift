@@ -63,5 +63,5 @@ struct Card<Content: View>: View, Identifiable {
 }
 
 #Preview {
-    ContentView()
+    Card("Title", "Description", image: Image(.placeholderVertical))
 }

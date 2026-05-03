@@ -6,47 +6,36 @@
 //
 
 import SwiftUI
+import Apis
+import Randoms
 import Utils
 
+/// A SwiftUI view that displays random user information, including their picture and name.
 struct ContentView: View {
-    @State private var cardIDs: [UUID] = (0..<10).map { _ in UUID() }
-    let x = 300
-    let y = 300
-
-    var items: [some View] {
-        cardIDs.map { cardID in
-            RandomImage(x, y)
-                .id(cardID)
-                .padding(5)
-        }
-    }
 
     var body: some View {
-        VStack {
-            HStack {
-                HorizontalRollView(
-                    views: items,
-                    frame: (x: CGFloat(x), y: CGFloat(y)),
-                    background: .gray
-                )
-            }
-
-            ScrollView(.horizontal, showsIndicators: false) {
+        /// Renders two vertically stacked random user cards within the view body.
+        List {
+            ForEach(0..<2) { index in
                 HStack {
-                    Spacer()
-
-                    ForEach(Array(items.enumerated()), id: \.offset) {
-                        index,
-                        item in
-                        item
-                            .background(.gray)
-                            .frame(width: CGFloat(x), height: CGFloat(y))
+                    RandomUser(.picture)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                    VStack (alignment: .leading) {
+                        RandomUser(.username)
+                        Text("User \(index + 1)")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.gray)
                     }
+                    
+                    Spacer()
+                    
+                    Button("Follow") {
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                .scrollTargetLayout()
-            }
-            .scrollTargetBehavior(.viewAligned)
-
+        }
+            
         }
     }
 }
